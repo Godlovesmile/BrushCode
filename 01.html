@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01</title>
+</head>
+<body>
+    <script>
+        // 我的解决方案
+        /*
+        function expandedForm(num) {
+            // Your code here
+            let arr = (num + '').split('');
+            let len = arr.length;
+            let res = '';
+            arr.forEach(function (item, index) {
+                if (item !== '0') {
+                    let resItem = Number(item) * Math.pow(10, len-1-index);
+                    res = res + ' + ' + resItem;
+                    }
+                });
+            return res.slice(3);
+        }*/
+
+        // 其他解决方案
+        const expandedForm = n => n.toString()
+                            .split("")
+                            .reverse()
+                            .map( (a, i) => a * Math.pow(10, i))
+                            .filter(a => a > 0)
+                            .reverse()
+                            .join(" + ");
+    </script>
+</body>
+</html>
